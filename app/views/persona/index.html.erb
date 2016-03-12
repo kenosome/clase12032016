@@ -1,0 +1,35 @@
+<div class="container">
+<h1>Persona#index</h1>
+<p>Find me in app/views/persona/index.html.erb</p>
+<p>
+  <% if Persona.blank? %>
+    <b>No Hay Datos</b>
+  <% else %>
+    <b>Tengo <%=@personas.size %> Personas</b>
+  <% end%>
+
+</p>
+  <div class="col-md-8">
+    <p>
+    <table class="table table-condensed table-hover">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Telefono</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @personas.each do |p| %>
+          <tr>
+            <td><%= p.nombre%></td>
+            <td><%=	p.edad %></td>
+            <td><%=	p.telefono %></td>
+          </tr>
+      <%end %>
+      </tbody>
+    </table>
+    </p>
+  </div>
+
+</div>

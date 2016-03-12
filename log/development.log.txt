@@ -1,0 +1,443 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-12 09:48:38 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/railties-4.2.5.1/lib/rails/templates/rails/welcome/index.html.erb (16.1ms)
+Completed 200 OK in 107ms (Views: 95.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2016-03-12 09:49:15 -0500
+Processing by Rails::InfoController#properties as */*
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/railties-4.2.5.1/lib/rails/templates/rails/info/properties.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 8.8ms | ActiveRecord: 1.9ms)
+  [1m[36m (101.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (15.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePersonas (20160312154717)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "personas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "edad" integer, "telefono" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160312154717"]]
+  [1m[35m (18.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPersona Load (1.6ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "personas" ("nombre", "edad", "telefono", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nombre", "Kenny Osorio"], ["edad", 25], ["telefono", "33456789"], ["created_at", "2016-03-12 16:14:21.628058"], ["updated_at", "2016-03-12 16:14:21.628058"]]
+  [1m[35m (94.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "personas" ("nombre", "edad", "telefono", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nombre", "Lina Montoya"], ["edad", 25], ["telefono", "123456"], ["created_at", "2016-03-12 16:21:05.931777"], ["updated_at", "2016-03-12 16:21:05.931777"]]
+  [1m[36m (42.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mPersona Load (0.3ms)[0m  SELECT "personas".* FROM "personas"
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT "personas".* FROM "personas" WHERE "personas"."nombre" = ?[0m  [["nombre", "Kenny"]]
+  [1m[35mPersona Load (0.1ms)[0m  SELECT "personas".* FROM "personas" WHERE "personas"."nombre" = ?  [["nombre", "Kenny Osorio"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "personas" ("nombre", "edad", "telefono", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nombre", "Alejandro"], ["edad", 65], ["telefono", "123456"], ["created_at", "2016-03-12 16:24:21.175397"], ["updated_at", "2016-03-12 16:24:21.175397"]]
+  [1m[36m (39.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "personas" ("nombre", "edad", "telefono", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nombre", "Mateo"], ["edad", 34], ["telefono", "123456"], ["created_at", "2016-03-12 16:24:38.249465"], ["updated_at", "2016-03-12 16:24:38.249465"]]
+  [1m[35m (38.5ms)[0m  commit transaction
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  [1m[35mPersona Load (3.7ms)[0m  SELECT "personas".* FROM "personas"  ORDER BY "personas"."edad" DESC
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 11:49:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PersonaController#index as HTML
+  Rendered persona/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1421ms (Views: 1419.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/persona.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/assets/persona.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-12 11:49:52 -0500
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 11:59:36 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  Rendered persona/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 11:59:44 -0500
+Processing by PersonaController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:08:04 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 40ms (Views: 35.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:10:55 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:11:11 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:13:23 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.4ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:16:41 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.4ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:19:58 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:21:06 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:21:28 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:23:15 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:30:02 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:31:39 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/persona/index" for 127.0.0.1 at 2016-03-12 12:34:03 -0500
+Processing by PersonaController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "personas"
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT "personas".* FROM "personas"[0m
+  Rendered persona/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateComputadors (20160312175054)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "computadors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cpu" varchar, "memoria" varchar, "disco" integer, "disco_mag" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160312175054"]]
+  [1m[36m (55.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/computadors/index" for 127.0.0.1 at 2016-03-12 13:00:16 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by ComputadorsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mComputador Load (0.3ms)[0m  [1mSELECT  "computadors".* FROM "computadors" WHERE "computadors"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 64ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Computador with 'id'=index):
+  app/controllers/computadors_controller.rb:67:in `set_computador'
+
+
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (117.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (159.1ms)
+
+
+Started GET "/computadors/index" for 127.0.0.1 at 2016-03-12 13:01:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ComputadorsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mComputador Load (0.2ms)[0m  SELECT  "computadors".* FROM "computadors" WHERE "computadors"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 18ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Computador with 'id'=index):
+  app/controllers/computadors_controller.rb:67:in `set_computador'
+
+
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.8ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.2ms)
+
+
+Started GET "/computadors/" for 127.0.0.1 at 2016-03-12 13:01:11 -0500
+Processing by ComputadorsController#index as HTML
+  Rendered computadors/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/index.html.erb:22: syntax error, unexpected ')', expecting '('
+...t_buffer.append=( computador. );@output_buffer.safe_append='...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/index.html.erb:26: syntax error, unexpected ')', expecting '('
+...t_buffer.append=( computador. );@output_buffer.safe_append='...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/index.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/index.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/index.html.erb:41: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/computadors/index.html.erb:22: syntax error, unexpected ')', expecting '('
+  app/views/computadors/index.html.erb:26: syntax error, unexpected ')', expecting '('
+  app/views/computadors/index.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+  app/views/computadors/index.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/computadors/index.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.9ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.1ms)
+
+
+Started GET "/computadors/" for 127.0.0.1 at 2016-03-12 13:02:02 -0500
+Processing by ComputadorsController#index as HTML
+  [1m[36mComputador Load (8.7ms)[0m  [1mSELECT "computadors".* FROM "computadors"[0m
+  Rendered computadors/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 434ms (Views: 424.9ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/computadors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-12 13:02:02 -0500
+
+
+Started GET "/assets/scaffolds.self-e51017278b5fd44a2c9c9a8c1c58b697f6d9c1876987938bcd2a85c4517321b2.css?body=1" for 127.0.0.1 at 2016-03-12 13:02:03 -0500
+
+
+Started GET "/assets/computadors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-12 13:02:03 -0500
+
+
+Started GET "/computadors/" for 127.0.0.1 at 2016-03-12 13:03:46 -0500
+Processing by ComputadorsController#index as HTML
+  [1m[35mComputador Load (1.7ms)[0m  SELECT "computadors".* FROM "computadors"
+  Rendered computadors/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 68ms (Views: 65.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/computadors/new" for 127.0.0.1 at 2016-03-12 13:03:56 -0500
+Processing by ComputadorsController#new as HTML
+  Rendered computadors/_form.html.erb (2.2ms)
+  Rendered computadors/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:19: syntax error, unexpected ':'
+...utput_buffer.append=( f.label : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:20: syntax error, unexpected ':'
+..._buffer.append=( f.text_field : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:35: syntax error, unexpected ':'
+...utput_buffer.append=( f.label : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:36: syntax error, unexpected ':'
+..._buffer.append=( f.text_field : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:45: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/computadors/_form.html.erb:19: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:20: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:35: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:36: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+  app/views/computadors/_form.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/computadors/_form.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+  app/views/computadors/new.html.erb:3:in `_app_views_computadors_new_html_erb___3585112731085259031_70240311184000'
+
+
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.8ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.7ms)
+
+
+Started GET "/computadors/new" for 127.0.0.1 at 2016-03-12 13:03:56 -0500
+Processing by ComputadorsController#new as HTML
+  Rendered computadors/_form.html.erb (1.2ms)
+  Rendered computadors/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:19: syntax error, unexpected ':'
+...utput_buffer.append=( f.label : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:20: syntax error, unexpected ':'
+..._buffer.append=( f.text_field : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:35: syntax error, unexpected ':'
+...utput_buffer.append=( f.label : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:36: syntax error, unexpected ':'
+..._buffer.append=( f.text_field : );@output_buffer.safe_append...
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/_form.html.erb:45: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/computadors/_form.html.erb:19: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:20: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:35: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:36: syntax error, unexpected ':'
+  app/views/computadors/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+  app/views/computadors/_form.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/computadors/_form.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+  app/views/computadors/new.html.erb:3:in `_app_views_computadors_new_html_erb___3585112731085259031_70240234221100'
+
+
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.6ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.7ms)
+
+
+Started GET "/computadors/new" for 127.0.0.1 at 2016-03-12 13:05:24 -0500
+Processing by ComputadorsController#new as HTML
+  Rendered computadors/_form.html.erb (50.9ms)
+  Rendered computadors/new.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 78ms (Views: 77.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/computadors" for 127.0.0.1 at 2016-03-12 13:06:09 -0500
+Processing by ComputadorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sc4TNMyYt8E6W8TTQC0cxEw5ON210wC3QG6lyHYln0iKMrE2xPTpqDJWPXkhNL2nB8Q5EA171Z9Ep3LwKeuSHA==", "computador"=>{"cpu"=>"Intel Core i7", "memoria"=>"8GB", "disco"=>"1", "disco_mag"=>"TB"}, "commit"=>"Create Computador"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "computadors" ("cpu", "memoria", "disco", "disco_mag", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["cpu", "Intel Core i7"], ["memoria", "8GB"], ["disco", 1], ["disco_mag", "TB"], ["created_at", "2016-03-12 18:06:09.869016"], ["updated_at", "2016-03-12 18:06:09.869016"]]
+  [1m[36m (29.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/computadors/1
+Completed 302 Found in 34ms (ActiveRecord: 30.1ms)
+
+
+Started GET "/computadors/1" for 127.0.0.1 at 2016-03-12 13:06:09 -0500
+Processing by ComputadorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mComputador Load (0.2ms)[0m  SELECT  "computadors".* FROM "computadors" WHERE "computadors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered computadors/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/show.html.erb:10: syntax error, unexpected ')', expecting '('
+..._buffer.append=( @computador. );@output_buffer.safe_append='
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/show.html.erb:30: syntax error, unexpected ')', expecting '('
+..._buffer.append=( @computador. );@output_buffer.safe_append='
+...                               ^
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+/home/diplomado/Documentos/clase12032016/Diplomado/appdiplomado/app/views/computadors/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/computadors/show.html.erb:10: syntax error, unexpected ')', expecting '('
+  app/views/computadors/show.html.erb:30: syntax error, unexpected ')', expecting '('
+  app/views/computadors/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/computadors/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.8ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.0ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/diplomado/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.9ms)

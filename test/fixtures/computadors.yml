@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpu: MyString
+  : MyString
+  memoria: MyString
+  disco: 1
+  disco_mag: MyString
+  : MyString
+
+two:
+  cpu: MyString
+  : MyString
+  memoria: MyString
+  disco: 1
+  disco_mag: MyString
+  : MyString

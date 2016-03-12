@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Computadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpu</th>
+      <th>Memoria</th>
+      <th>Disco</th>
+      <th>Disco mag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @computadors.each do |computador| %>
+      <tr>
+        <td><%= computador.cpu %></td>
+        <td><%= computador.memoria %></td>
+        <td><%= computador.disco %></td>
+        <td><%= computador.disco_mag %></td>
+        <td><%= link_to 'Show', computador %></td>
+        <td><%= link_to 'Edit', edit_computador_path(computador) %></td>
+        <td><%= link_to 'Destroy', computador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Computador', new_computador_path %>

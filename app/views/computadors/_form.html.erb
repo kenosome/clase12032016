@@ -1,0 +1,35 @@
+<%= form_for(@computador) do |f| %>
+  <% if @computador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@computador.errors.count, "error") %> prohibited this computador from being saved:</h2>
+
+      <ul>
+      <% @computador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpu %><br>
+    <%= f.text_field :cpu %>
+  </div>
+
+  <div class="field">
+    <%= f.label :memoria %><br>
+    <%= f.text_field :memoria %>
+  </div>
+  <div class="field">
+    <%= f.label :disco %><br>
+    <%= f.number_field :disco %>
+  </div>
+  <div class="field">
+    <%= f.label :disco_mag %><br>
+    <%= f.text_field :disco_mag %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
